@@ -24,7 +24,13 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
-        if(Input.GetKeyDown(KeyCode.R))
+        if (transform.position.x >= 100 || transform.position.x <= -100 )
+            transform.position = new Vector3(-transform.position.x, transform.position.y, transform.position.z);
+
+        if (transform.position.z >= 100 || transform.position.z <= -100)
+            transform.position = new Vector3(transform.position.x, transform.position.y, -transform.position.z);
+
+        if (Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

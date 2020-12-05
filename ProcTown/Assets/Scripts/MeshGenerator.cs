@@ -70,11 +70,13 @@ public class MeshGenerator : MonoBehaviour
         mesh.triangles = triangles;
 
         mesh.RecalculateNormals();
-        Material mat = Instantiate(material);
-        GetComponent<MeshRenderer>().material = mat;
 
         mesh.RecalculateBounds();
         MeshCollider meshCollider = GetComponent<MeshCollider>();
         meshCollider.sharedMesh = mesh;
+
+        mesh.RecalculateTangents();
+        Material mat = Instantiate(material);
+        GetComponent<MeshRenderer>().material = mat;
     }
 }

@@ -20,7 +20,7 @@ public class HouseGeneration : MonoBehaviour
     void Start()
     {
         Instantiate(hall, hallPosition, hall.transform.rotation);
-        var numOfHouses = Random.Range(3, 15);
+        var numOfHouses = Random.Range(4, 15);
         Vector3[] taken = new Vector3[numOfHouses];
 
         var f = Random.Range(0, fpref.Length);
