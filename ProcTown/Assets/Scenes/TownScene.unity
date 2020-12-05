@@ -424,7 +424,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -440,6 +440,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1073182693}
+  - {fileID: 1687229721}
+  - {fileID: 953931903}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -448,6 +450,85 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &953931902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 953931903}
+  - component: {fileID: 953931905}
+  - component: {fileID: 953931904}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &953931903
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953931902}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 764329810}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 4.6539, y: 334}
+  m_SizeDelta: {x: 719.8013, y: 57.98291}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &953931904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953931902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 48
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &953931905
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953931902}
+  m_CullTransparentMesh: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +647,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 25, y: 25}
+  m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1073182694
 MonoBehaviour:
@@ -797,6 +878,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hall: {fileID: 7017013212212391476, guid: 26447a48c18d306448c770dd8a11b751, type: 3}
   wall: {fileID: 2137452322696573891, guid: dc9786fd8307dc447af042eed8fcbc41, type: 3}
+  halfwall: {fileID: 4202637139242422670, guid: 6876ebf95426394428d92847baa29e57, type: 3}
+  titleText: {fileID: 953931904}
   house:
   - {fileID: 4541078392147920858, guid: fe2ad00956beb7a4199d0303e9356ad8, type: 3}
   - {fileID: 3187910194989505628, guid: cbc905281a5cbab488dd5051889f4fb8, type: 3}
@@ -818,6 +901,153 @@ MonoBehaviour:
   - {x: 33.5, y: 3.5, z: 21.5}
   - {x: 33.5, y: 3.5, z: 16.5}
   - {x: 33.5, y: 3.5, z: 11.5}
+  fpref:
+  - Black
+  - White
+  - Stone
+  - Wood
+  - Pearl
+  - Sol
+  - Thwart
+  - Idyl
+  - Dec
+  - Bas
+  - Zum
+  - Free
+  - Love
+  - Far
+  - Holy
+  - Death
+  - Sile
+  - Oax
+  - Gold
+  - Eve
+  - Wine
+  - Dark
+  - Cal
+  - Nova
+  secpref:
+  - d
+  - ened
+  - keep
+  - helm
+  - thram
+  - lic
+  - mber
+  - tar
+  - far
+  - dom
+  - fege
+  - farfalla
+  - rome
+  - rder
+  - nce
+  - aca
+  - enrod
+  - line
+  - yard
+  - ilage
+  - ibri
+  - one
+  - itude
+  - kali
+  title:
+  - 
+  - ' the village of thieves'
+  - ' the village of guards'
+  - ' the village of knights'
+  - ' the village of maidens'
+  - ' the village of trash'
+  - ' the village of paradise'
+  - ' the village of peace'
+  - ' the village of hope'
+  - ' the village of idiots'
+  - ' the village of humies'
+  - ' the village of freedom'
+  - ' the pious village'
+  - ' the village of music'
+  - ' the village of plains'
+  - ' the village of plague'
+  - ' the quiet village'
+  - ' the village of brigands'
+  - ' the wealthy village'
+  - ' the village of silk'
+  - ' the village of wine'
+  - ' the cursed village'
+  - ' the village of poets'
+  - ' the village from hell'
+--- !u!1 &1687229720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1687229721}
+  - component: {fileID: 1687229723}
+  - component: {fileID: 1687229722}
+  m_Layer: 5
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1687229721
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687229720}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 764329810}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000017166, y: 334}
+  m_SizeDelta: {x: 710.49335, y: 57.983124}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1687229722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687229720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.29411766}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1687229723
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687229720}
+  m_CullTransparentMesh: 0
 --- !u!850595691 &2029342203
 LightingSettings:
   m_ObjectHideFlags: 0

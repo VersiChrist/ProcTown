@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HouseGeneration : MonoBehaviour
 {
     public GameObject hall; 
-    public GameObject wall;
+    public GameObject wall, halfwall;
+    public Text titleText;
     public GameObject[] house;
     public Vector3 hallPosition;
     public Vector3[] positions;
+    public string[] fpref, secpref, title;
 
     int randPos;
     Quaternion rotato;
@@ -19,6 +22,12 @@ public class HouseGeneration : MonoBehaviour
         Instantiate(hall, hallPosition, hall.transform.rotation);
         var numOfHouses = Random.Range(3, 15);
         Vector3[] taken = new Vector3[numOfHouses];
+
+        var f = Random.Range(0, fpref.Length);
+        var s = Random.Range(0, secpref.Length);
+        var t = Random.Range(0, title.Length);
+
+        titleText.text = string.Format("{0}{1}{2}", fpref[f], secpref[s], title[t]);
 
         for (int i = 0; i < numOfHouses; i++)
         {
@@ -51,14 +60,33 @@ public class HouseGeneration : MonoBehaviour
 
         for (int i = 0; i < 40; i++)
         {
-            Instantiate(wall, new Vector3(i + .5f, 5, 0.5f), Quaternion.identity);
-            Instantiate(wall, new Vector3(i + .5f, 5, 39.5f), Quaternion.identity);
-            if(i > 0 && i < 39)
+            switch (i%2==0)
             {
-                Instantiate(wall, new Vector3(0.5f, 5, i + .5f), Quaternion.identity);
-                Instantiate(wall, new Vector3(39.5f, 5, i + .5f), Quaternion.identity);
+                case false:
+                    Instantiate(wall, new Vector3(i + .5f, 5, .5f), Quaternion.identity);
+                    Instantiate(halfwall, new Vector3(i + .5f, 5, 39.5f), Quaternion.identity);
+                    break;
+                case true:
+                    Instantiate(halfwall, new Vector3(i + .5f, 5, .5f), Quaternion.identity);
+                    Instantiate(wall, new Vector3(i + .5f, 5, 39.5f), Quaternion.identity);
+                    break;
+                  
             }
 
+            if (i > 0 && i < 39)
+            {
+                switch (i % 2 == 0)
+                {
+                    case false:
+                        Instantiate(wall, new Vector3(.5f, 5, i + .5f), Quaternion.identity);
+                        Instantiate(halfwall, new Vector3(39.5f, 5, i + .5f), Quaternion.identity);
+                        break;
+                    case true:
+                        Instantiate(halfwall, new Vector3(.5f, 5, i + .5f), Quaternion.identity);
+                        Instantiate(wall, new Vector3(39.5f, 5, i + .5f), Quaternion.identity);
+                        break;
+                }
+            }
         }
     }
 }
