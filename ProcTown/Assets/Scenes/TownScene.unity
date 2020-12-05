@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &192720620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 192720621}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &192720621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192720620}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &234041079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -673,6 +703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: []
+  material: {fileID: 2100000, guid: 625f7878bc5453f4387fed479f044bb8, type: 2}
   xSize: 40
   zSize: 40
 --- !u!23 &1319960199
@@ -694,7 +725,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 625f7878bc5453f4387fed479f044bb8, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -765,10 +796,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hall: {fileID: 7017013212212391476, guid: 26447a48c18d306448c770dd8a11b751, type: 3}
-  well: {fileID: 0}
+  wall: {fileID: 2137452322696573891, guid: dc9786fd8307dc447af042eed8fcbc41, type: 3}
   house:
   - {fileID: 4541078392147920858, guid: fe2ad00956beb7a4199d0303e9356ad8, type: 3}
   - {fileID: 3187910194989505628, guid: cbc905281a5cbab488dd5051889f4fb8, type: 3}
+  - {fileID: 8381396046700794732, guid: af182b361a5903044a7ca1445a12b223, type: 3}
+  - {fileID: 5817679774251573070, guid: 13f1263118de1ac44a9f29e0aaf52db3, type: 3}
   hallPosition: {x: 19.5, y: 3.5, z: 36.5}
   positions:
   - {x: 12.5, y: 3.5, z: 36.5}

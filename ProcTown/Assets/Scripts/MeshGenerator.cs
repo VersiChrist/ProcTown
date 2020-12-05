@@ -8,6 +8,7 @@ public class MeshGenerator : MonoBehaviour
     Vector3[] vertices;
     int[] triangles;
     public Vector3[] grid;
+    public Material material;
 
     public int xSize;
     public int zSize;
@@ -69,9 +70,11 @@ public class MeshGenerator : MonoBehaviour
         mesh.triangles = triangles;
 
         mesh.RecalculateNormals();
-        mesh.RecalculateBounds();
+        Material mat = Instantiate(material);
+        GetComponent<MeshRenderer>().material = mat;
 
-        MeshCollider meshCollider = gameObject.GetComponent<MeshCollider>();
+        mesh.RecalculateBounds();
+        MeshCollider meshCollider = GetComponent<MeshCollider>();
         meshCollider.sharedMesh = mesh;
     }
 }
