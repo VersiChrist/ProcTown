@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ public class Human : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-            Invoke("ChangeDirection", 3f);
+        InvokeRepeating("ChangeDirection", 3f, 5f);
     }
 
     // Update is called once per frame
@@ -25,8 +26,14 @@ public class Human : MonoBehaviour
     {
         rb.MovePosition(transform.position + transform.forward * 4 * Time.deltaTime);
 
-        if (transform.rotation == targetRotation)
-            Invoke("ChangeDirection", 5f);
+        if (transform.position.z < 2f && transform.position.x > 2f)
+            transform.rotation = Quaternion.Euler(0, 0, 0);       
+        if (transform.position.z > 2f && transform.position.x > 2f)
+            transform.rotation = Quaternion.Euler(0, 90, 0);     
+        if (transform.position.z < 2f && transform.position.x > 38.5f)
+            transform.rotation = Quaternion.Euler(0, -90, 0);    
+        if (transform.position.z > 2f && transform.position.x > 2f)
+            transform.rotation = Quaternion.Euler(0, 0, 0);
 
         /*
         RaycastHit hit;
@@ -52,7 +59,7 @@ public class Human : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        transform.rotation = Quaternion.Euler(0, transform.rotation.y - 90, 0);
+        transform.rotation = Quaternion.Inverse(transform.rotation);
         Debug.Log("Did Hit");
     }
 }
