@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HouseGeneration : MonoBehaviour
 {
+    public Text popText;
     public GameObject hall; 
     public GameObject wall, halfwall;
     public Text titleText;
@@ -15,10 +16,12 @@ public class HouseGeneration : MonoBehaviour
 
     int randPos;
     Quaternion rotato;
+    public static int population;
 
     // Start is called before the first frame update
     void Start()
     {
+        population = 0;
         Instantiate(hall, hallPosition, hall.transform.rotation);
         var numOfHouses = Random.Range(4, 15);
         Vector3[] taken = new Vector3[numOfHouses];
@@ -36,23 +39,13 @@ public class HouseGeneration : MonoBehaviour
                 randPos = Random.Range(0, 14);
 
                 foreach (Vector3 item in taken)
-                {
                     if (positions[randPos] == item)
                         j--;
-                }
             }
 
             var randHouse = Random.Range(0, house.Length);
 
-            switch (randPos > 6 && house[randHouse].GetComponent<House>().sideways)
-            {
-                case false:
-                    rotato = Quaternion.Euler(0, 90, 0);
-                    break;
-                case true:
-                    rotato = Quaternion.Euler(0, -90, 0);
-                    break;
-            }
+            rotato = Quaternion.Euler(0, 90 * (randPos > 6 && house[randHouse].GetComponent<House>().sideways ? -1 : 1), 0);
 
             Instantiate(house[randHouse], positions[randPos], rotato);
             taken[i] = positions[randPos];
@@ -88,5 +81,10 @@ public class HouseGeneration : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void Update()
+    {
+        popText.text = string.Format("Population: {0}", population);
     }
 }

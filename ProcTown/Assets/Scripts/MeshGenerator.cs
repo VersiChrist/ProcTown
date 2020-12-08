@@ -19,7 +19,6 @@ public class MeshGenerator : MonoBehaviour
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
 
-
         CreateShape();
         UpdateMesh();
     }
@@ -27,15 +26,15 @@ public class MeshGenerator : MonoBehaviour
     void CreateShape()
     {
         vertices = new Vector3[(xSize + 1) * (zSize + 1)];
-        float xMultiplier = Random.Range(.025f, .075f);
+
+        float multiplier = Random.Range(.025f, .075f);
+        Debug.Log(multiplier);
 
         for (int z = 0, i = 0; z <= zSize; z++)
         {
             for (int x = 0; x <= xSize; x++)
             {
-
-                Debug.Log(xMultiplier);
-                float y = Mathf.PerlinNoise(x * xMultiplier, z * xMultiplier) * 2f;
+                float y = Mathf.PerlinNoise(x * multiplier, z * multiplier) * 2f;
                 vertices[i] = new Vector3(x, y, z);
                 i++;
             }

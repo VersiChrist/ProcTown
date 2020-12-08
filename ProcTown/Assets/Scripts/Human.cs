@@ -5,15 +5,19 @@ using UnityEngine;
 
 public class Human : MonoBehaviour
 {
+    bool move;
     Rigidbody rb;
     Quaternion targetRotation;
     public LayerMask layer;
 
+
     // Start is called before the first frame update
     void Start()
     {
+        HouseGeneration.population++;
         rb = GetComponent<Rigidbody>();
-        InvokeRepeating("ChangeDirection", 3f, 5f);
+        InvokeRepeating("ChangeDirection", 5f, 5f);
+        InvokeRepeating("Halt", 0f, 3f);
     }
 
     // Update is called once per frame
@@ -24,31 +28,42 @@ public class Human : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(transform.position + transform.forward * 4 * Time.deltaTime);
+        if(move)
+            rb.MovePosition(transform.position + transform.forward * 3 * Time.deltaTime);
 
         if (transform.position.z < 2f && transform.position.x > 2f)
-            transform.rotation = Quaternion.Euler(0, 0, 0);       
-        if (transform.position.z > 2f && transform.position.x > 2f)
-            transform.rotation = Quaternion.Euler(0, 90, 0);     
-        if (transform.position.z < 2f && transform.position.x > 38.5f)
-            transform.rotation = Quaternion.Euler(0, -90, 0);    
-        if (transform.position.z > 2f && transform.position.x > 2f)
+        {
+            CancelInvoke("ChangeDirection");
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            InvokeRepeating("ChangeDirection", 5f, 5f);
+        }   
 
-        /*
-        RaycastHit hit;
+        if (transform.position.z > 2f && transform.position.x < 2f)
+        {
+            CancelInvoke("ChangeDirection");
+            transform.rotation = Quaternion.Euler(0, 90, 0);
+            InvokeRepeating("ChangeDirection", 5f, 5f);
+        }     
 
-        if (Physics.Raycast(transform.position + (Vector3.up/2), transform.TransformDirection(Vector3.forward), out hit, 4, layer))
+        if (transform.position.z > 2f && transform.position.x > 38f)
         {
-            targetRotation = Quaternion.Euler(0, transform.rotation.y + 90, 0);
-            Debug.DrawRay(transform.position + (Vector3.up / 2), transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
-            Debug.Log("Did Hit");
+            CancelInvoke("ChangeDirection");
+            transform.rotation = Quaternion.Euler(0, -90, 0);
+            InvokeRepeating("ChangeDirection", 5f, 5f);
         }
-        else
+               
+        if (transform.position.z > 38.5f && transform.position.x > 2f)
         {
-            Debug.DrawRay(transform.position + (Vector3.up / 2), transform.TransformDirection(Vector3.forward) * 7, Color.green);
+            CancelInvoke("ChangeDirection");
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+            InvokeRepeating("ChangeDirection", 5f, 5f);
         }
-        */
+
+    }
+
+    void Halt()
+    {
+        move = Random.Range(0, 21) > 6;
     }
 
     void ChangeDirection()
@@ -59,7 +74,10 @@ public class Human : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        transform.rotation = Quaternion.Inverse(transform.rotation);
+        CancelInvoke("ChangeDirection");
+        transform.rotation = Random.Range(0,2) == 0 ? Quaternion.Inverse(transform.rotation) : Quaternion.Euler(0, transform.rotation.y * 90, 0);
         Debug.Log("Did Hit");
+        InvokeRepeating("ChangeDirection", 5f, 5f);
     }
 }
+
