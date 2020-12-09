@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &675025592273164008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 672378049169278562}
+  - component: {fileID: 675025592273164009}
+  - component: {fileID: 1887124801}
+  m_Layer: 0
+  m_Name: char01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &672378049169278562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675025592273164008}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &675025592273164009
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675025592273164008}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!114 &1887124801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675025592273164008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f31b69273f8da0a439a1769bb5141d85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gender: 0
+  heads:
+  - {fileID: 3955494042766233928, guid: a13f79fbc4410ae488d4284ba1f2a4fe, type: 3}
+  - {fileID: 1764041244637804169, guid: 96314a0ffd87e8442aae309aa1d0e1a4, type: 3}
+  - {fileID: 3665635892661292559, guid: 3cf8f4680194aad4e96e70272a3b94d0, type: 3}
+  - {fileID: 805129406079907966, guid: e33240d3d4092064d990aab6d602b6f8, type: 3}
+  torsos:
+  - {fileID: 678235635725253101, guid: 2c2575c534e30d64a9171d2d54763082, type: 3}
+  - {fileID: 573650690836562502, guid: ffe7bc852bb481b439da4d0a9c007d8f, type: 3}
+  - {fileID: 5277707778043804316, guid: 788af3129e81c5644bef12d46c4ae17f, type: 3}
+  - {fileID: 2571472301359088972, guid: d484abdafda154e4ea25e0239174a251, type: 3}

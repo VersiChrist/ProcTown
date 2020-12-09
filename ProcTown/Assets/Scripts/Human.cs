@@ -7,13 +7,43 @@ public class Human : MonoBehaviour
 {
     bool move;
     Rigidbody rb;
-    Quaternion targetRotation;
-    public LayerMask layer;
-
+    public int gender;
+    public GameObject[] heads, torsos;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (gender == 0)
+            gender = Random.Range(1, 3);
+
+
+        for (int i = 0; i < 1; i++)
+        {
+            var r = Random.Range(0, heads.Length);
+
+            if (gender == 1 && r % 2 == 0 || gender == 2 && r % 2 == 1)
+                i--;
+            else
+            {
+                GameObject tors = Instantiate(torsos[r], new Vector3(transform.localPosition.x, transform.localPosition.y + 0.285f, transform.localPosition.z), transform.rotation);
+                tors.transform.parent = gameObject.transform;
+            }
+        }
+
+
+        for (int i = 0; i < 1; i++)
+        {
+            var r = Random.Range(0, heads.Length);
+
+            if (gender == 1 && r % 2 == 0 || gender == 2 && r % 2 == 1)
+                i--;
+            else
+            {
+                GameObject head = Instantiate(heads[r], new Vector3(transform.position.x, transform.localPosition.y + 0.725f, transform.position.z), transform.rotation);
+                head.transform.parent = gameObject.transform;
+            }
+        }
+
         HouseGeneration.population++;
         rb = GetComponent<Rigidbody>();
         InvokeRepeating("ChangeDirection", 5f, 5f);

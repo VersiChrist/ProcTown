@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class HouseGeneration : MonoBehaviour
 {
     public Text popText;
-    public GameObject hall; 
-    public GameObject wall, halfwall;
+    public GameObject hall, well; 
+    public GameObject wall, halfwall, housefolder, wallfolder;
     public Text titleText;
     public GameObject[] house;
     public Vector3 hallPosition;
@@ -22,7 +22,12 @@ public class HouseGeneration : MonoBehaviour
     void Start()
     {
         population = 0;
-        Instantiate(hall, hallPosition, hall.transform.rotation);
+        GameObject tohall = Instantiate(hall, hallPosition, hall.transform.rotation);
+        tohall.transform.parent = housefolder.transform;
+
+        GameObject spwell = Instantiate(well, new Vector3(19.5f, 4, 22.5f), well.transform.rotation);
+        spwell.transform.parent = housefolder.transform;
+
         var numOfHouses = Random.Range(4, 15);
         Vector3[] taken = new Vector3[numOfHouses];
 
@@ -47,23 +52,28 @@ public class HouseGeneration : MonoBehaviour
 
             rotato = Quaternion.Euler(0, 90 * (randPos > 6 && house[randHouse].GetComponent<House>().sideways ? -1 : 1), 0);
 
-            Instantiate(house[randHouse], positions[randPos], rotato);
+            GameObject sph = Instantiate(house[randHouse], positions[randPos], rotato);
+            sph.transform.parent = housefolder.transform;
             taken[i] = positions[randPos];
         }
 
         for (int i = 0; i < 40; i++)
         {
+
             switch (i%2==0)
             {
                 case false:
-                    Instantiate(wall, new Vector3(i + .5f, 5, .5f), Quaternion.identity);
-                    Instantiate(halfwall, new Vector3(i + .5f, 5, 39.5f), Quaternion.identity);
+                    GameObject wall0 = Instantiate(wall, new Vector3(i + .5f, 5, .5f), Quaternion.identity);
+                    wall0.transform.parent = wallfolder.transform;
+                    GameObject wall1 = Instantiate(halfwall, new Vector3(i + .5f, 5, 39.5f), Quaternion.identity);
+                    wall1.transform.parent = wallfolder.transform;
                     break;
                 case true:
-                    Instantiate(halfwall, new Vector3(i + .5f, 5, .5f), Quaternion.identity);
-                    Instantiate(wall, new Vector3(i + .5f, 5, 39.5f), Quaternion.identity);
+                    wall0 = Instantiate(halfwall, new Vector3(i + .5f, 5, .5f), Quaternion.identity);
+                    wall0.transform.parent = wallfolder.transform;
+                    wall1 = Instantiate(wall, new Vector3(i + .5f, 5, 39.5f), Quaternion.identity);
+                    wall1.transform.parent = wallfolder.transform;
                     break;
-                  
             }
 
             if (i > 0 && i < 39)
@@ -71,12 +81,22 @@ public class HouseGeneration : MonoBehaviour
                 switch (i % 2 == 0)
                 {
                     case false:
-                        Instantiate(wall, new Vector3(.5f, 5, i + .5f), Quaternion.identity);
-                        Instantiate(halfwall, new Vector3(39.5f, 5, i + .5f), Quaternion.identity);
+                        GameObject wall2 = Instantiate(wall, new Vector3(.5f, 5, i + .5f), Quaternion.identity);
+                        wall2.transform.parent = wallfolder.transform;
+                        wall2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+                        
+                        GameObject wall3 = Instantiate(halfwall, new Vector3(39.5f, 5, i + .5f), Quaternion.identity);
+                        wall3.transform.parent = wallfolder.transform;
+                        wall3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
                         break;
                     case true:
-                        Instantiate(halfwall, new Vector3(.5f, 5, i + .5f), Quaternion.identity);
-                        Instantiate(wall, new Vector3(39.5f, 5, i + .5f), Quaternion.identity);
+                        wall2 = Instantiate(halfwall, new Vector3(.5f, 5, i + .5f), Quaternion.identity);
+                        wall2.transform.parent = wallfolder.transform;
+                        wall2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+
+                        wall3 = Instantiate(wall, new Vector3(39.5f, 5, i + .5f), Quaternion.identity);
+                        wall3.transform.parent = wallfolder.transform;
+                        wall3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
                         break;
                 }
             }
