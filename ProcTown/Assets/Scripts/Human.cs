@@ -9,6 +9,8 @@ public class Human : MonoBehaviour
     Rigidbody rb;
     public int gender;
     public GameObject[] heads, torsos;
+    public string personality;
+    public string[] mafp, masp, fefp, fesp, personalities;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +18,11 @@ public class Human : MonoBehaviour
         if (gender == 0)
             gender = Random.Range(1, 3);
 
+        var f = Random.Range(0, mafp.Length);
+        var s = Random.Range(0, masp.Length);
+
+        gameObject.name = string.Format("{0}{1}", gender == 1 ? mafp[f] : fefp[f], gender == 1 ? masp[s] : fesp[s]);
+        personality = personalities[Random.Range(0, personalities.Length)];
 
         for (int i = 0; i < 1; i++)
         {
@@ -29,7 +36,6 @@ public class Human : MonoBehaviour
                 tors.transform.parent = gameObject.transform;
             }
         }
-
 
         for (int i = 0; i < 1; i++)
         {

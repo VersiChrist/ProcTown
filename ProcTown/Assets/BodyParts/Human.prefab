@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 675025592273164009}
   - component: {fileID: 1887124801}
   m_Layer: 0
-  m_Name: char01
+  m_Name: Human
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,3 +71,129 @@ MonoBehaviour:
   - {fileID: 573650690836562502, guid: ffe7bc852bb481b439da4d0a9c007d8f, type: 3}
   - {fileID: 5277707778043804316, guid: 788af3129e81c5644bef12d46c4ae17f, type: 3}
   - {fileID: 2571472301359088972, guid: d484abdafda154e4ea25e0239174a251, type: 3}
+  personality: 
+  mafp:
+  - Osl
+  - And
+  - Brith
+  - Duce
+  - God
+  - Al
+  - Swatre
+  - Usc
+  - Heri
+  - Freot
+  - Ecg
+  - Sig
+  - Beorht
+  - Strong
+  - Peoht
+  - Idm
+  - Wynd
+  - Mereh
+  - Burghe
+  - Deo
+  - Heor
+  - Tan
+  - Hyge
+  - Gund
+  masp:
+  - ac
+  - here
+  - noth
+  - man
+  - far
+  - min
+  - band
+  - frea
+  - mann
+  - hulaf
+  - frith
+  - stein
+  - mund
+  - lic
+  - helm
+  - aer
+  - with
+  - ush
+  - ard
+  - wuc
+  - ured
+  - cred
+  - bald
+  - ulf
+  fefp:
+  - God
+  - Beorn
+  - Sex
+  - Est
+  - Ethel
+  - Aeb
+  - Wude
+  - Cyni
+  - Frith
+  - Mat
+  - Tid
+  - Ric
+  - Balet
+  - Cyne
+  - Tou
+  - Wend
+  - Stan
+  - Berh
+  - Gold
+  - Coen
+  - Burw
+  - Here
+  - Enge
+  - Theor
+  fesp:
+  - wyna
+  - thryth
+  - huie
+  - rid
+  - hild
+  - be
+  - roua
+  - burg
+  - ugyth
+  - tha
+  - hild
+  - ola
+  - hiva
+  - wise
+  - ild
+  - reda
+  - flede
+  - tgyth
+  - yna
+  - burg
+  - ena
+  - lufu
+  - leis
+  - igitha
+  personalities:
+  - Calm
+  - Annoying
+  - Lovable
+  - Talkative
+  - Parently
+  - Laidback
+  - Uncaring
+  - Silent
+  - Energetic
+  - Introverted
+  - Caring
+  - Kind
+  - Friendly
+  - Airy
+  - Fanatical
+  - Foolish
+  - Weak
+  - Selfish
+  - Brave
+  - Generous
+  - Considerate
+  - Hard-Working
+  - Rational
+  - Witty
