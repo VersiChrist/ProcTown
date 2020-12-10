@@ -28,7 +28,7 @@ public class Human : MonoBehaviour
         {
             var r = Random.Range(0, heads.Length);
 
-            if (gender == 1 && r % 2 == 0 || gender == 2 && r % 2 == 1)
+            if (gender == 1 && r % 2 == 1 || gender == 2 && r % 2 == 0)
                 i--;
             else
             {
@@ -41,7 +41,7 @@ public class Human : MonoBehaviour
         {
             var r = Random.Range(0, heads.Length);
 
-            if (gender == 1 && r % 2 == 0 || gender == 2 && r % 2 == 1)
+            if (gender == 1 && r % 2 == 1 || gender == 2 && r % 2 == 0)
                 i--;
             else
             {
@@ -54,12 +54,6 @@ public class Human : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         InvokeRepeating("ChangeDirection", 5f, 5f);
         InvokeRepeating("Halt", 0f, 3f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void FixedUpdate()

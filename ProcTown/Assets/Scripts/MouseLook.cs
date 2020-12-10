@@ -6,15 +6,21 @@ using UnityEngine.UI;
 public class MouseLook : MonoBehaviour
 {
     public float mouseSensitivity = 100f;
+    public string[] genders;
 
     public Transform playerBody;
+    public GameObject infobox;
     public Text villagerName;
+    public Text genderText;
+    //public Text profName;
+    public Text persName;
 
     float xRotation = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
+        infobox.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -37,12 +43,16 @@ public class MouseLook : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity))
             if(hit.transform.gameObject.GetComponent<Human>() != null)
             {
-                villagerName.gameObject.SetActive(true);
+                infobox.gameObject.SetActive(true);
 
                 villagerName.text = hit.transform.gameObject.name;
+                genderText.text = genders[hit.transform.gameObject.GetComponent<Human>().gender];
+                //profName.text = hit.transform.gameObject.GetComponent<Human>();
+                persName.text = hit.transform.gameObject.GetComponent<Human>().personality;
+
             }
             else
-                villagerName.gameObject.SetActive(false);
+                infobox.gameObject.SetActive(false);
 
 
 
