@@ -35,20 +35,20 @@ public class House : MonoBehaviour
             thirdDwell.GetComponent<Human>().parent2 = secDwell;
         }
 
-
+        var randProf = Random.Range(0, 10);
         switch (buildType)
         {
             case 0:
-                firstDwell.GetComponent<Human>().profession = firstDwell.GetComponent<Human>().gender == 1 ? firstDwell.GetComponent<Human>().houseProfM[Random.Range(0, 10)] : firstDwell.GetComponent<Human>().houseProfF[Random.Range(0, 10)];
+                firstDwell.GetComponent<Human>().profession = firstDwell.GetComponent<Human>().gender == 1 ? firstDwell.GetComponent<Human>().houseProfM[randProf] : firstDwell.GetComponent<Human>().houseProfF[randProf];
                 
                 if(secDwell != null)
-                    secDwell.GetComponent<Human>().profession = secDwell.GetComponent<Human>().gender == 1 ? secDwell.GetComponent<Human>().houseProfM[Random.Range(0, 10)] : secDwell.GetComponent<Human>().houseProfF[Random.Range(0, 10)];
+                    secDwell.GetComponent<Human>().profession = secDwell.GetComponent<Human>().gender == 1 ? secDwell.GetComponent<Human>().houseProfM[randProf] : secDwell.GetComponent<Human>().houseProfF[randProf];
                 break;
             case 1:
-                firstDwell.GetComponent<Human>().profession = firstDwell.GetComponent<Human>().gender == 1 ? firstDwell.GetComponent<Human>().storeProfM[Random.Range(0, 10)] : firstDwell.GetComponent<Human>().storeProfF[Random.Range(0, 10)];
+                firstDwell.GetComponent<Human>().profession = firstDwell.GetComponent<Human>().gender == 1 ? firstDwell.GetComponent<Human>().storeProfM[randProf] : firstDwell.GetComponent<Human>().storeProfF[randProf];
                 
                 if (secDwell != null)
-                    secDwell.GetComponent<Human>().profession = secDwell.GetComponent<Human>().gender == 1 ? secDwell.GetComponent<Human>().storeProfM[Random.Range(0, 10)] : secDwell.GetComponent<Human>().storeProfF[Random.Range(0, 10)];
+                    secDwell.GetComponent<Human>().profession = secDwell.GetComponent<Human>().gender == 1 ? secDwell.GetComponent<Human>().storeProfM[randProf] : secDwell.GetComponent<Human>().storeProfF[randProf];
                 break;
             case 2:
                 firstDwell.GetComponent<Human>().profession = firstDwell.GetComponent<Human>().mayorProfs[0];
