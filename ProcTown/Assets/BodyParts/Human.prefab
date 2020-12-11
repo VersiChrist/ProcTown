@@ -72,6 +72,7 @@ MonoBehaviour:
   - {fileID: 5277707778043804316, guid: 788af3129e81c5644bef12d46c4ae17f, type: 3}
   - {fileID: 2571472301359088972, guid: d484abdafda154e4ea25e0239174a251, type: 3}
   personality: 
+  proffesion: 
   mafp:
   - Osl
   - And
@@ -197,3 +198,51 @@ MonoBehaviour:
   - Hard-Working
   - Rational
   - Witty
+  houseProfM:
+  - None
+  - Bard
+  - Guard
+  - Alchemist
+  - Medic
+  - Blacksmith
+  - Winemaker
+  - Jailer
+  - Hunter
+  - Professor
+  houseProfF:
+  - None
+  - Bard
+  - Guard
+  - Alchemist
+  - Medic
+  - Seamstress
+  - Grape-stomper
+  - Accountant
+  - Herb-collector
+  - Doctor
+  storeProfM:
+  - Merchant
+  - Alchemist
+  - Wine Seller
+  - Janitor
+  - Meat Seller
+  - Armorsmith
+  - Potion Seller
+  - Bartender
+  - Butler
+  - Butcher
+  storeProfF:
+  - Merchant
+  - Alchemist
+  - Wine Seller
+  - Janitor
+  - Meat Seller
+  - Clothes Seller
+  - Herb Seller
+  - Waitress
+  - Maid
+  - Veggie Seller
+  mayorProfs:
+  - Mayor
+  - Mayor's Husband
+  - Mayor's Wife

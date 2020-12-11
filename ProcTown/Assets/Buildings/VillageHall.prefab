@@ -218,6 +218,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sideways: 0
   human: {fileID: 675025592273164008, guid: c81e4eae529df254c91e90cd13dab7a7, type: 3}
+  buildType: 2
+  houseProfM: []
+  houseProfF: []
+  storeProfM: []
+  storeProfF: []
+  mayorProfs: []
   spawnpoints:
   - {fileID: 5279585953261967617}
   - {fileID: 6119819664355505730}

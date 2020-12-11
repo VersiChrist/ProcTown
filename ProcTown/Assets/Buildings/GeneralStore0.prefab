@@ -149,6 +149,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sideways: 1
   human: {fileID: 675025592273164008, guid: c81e4eae529df254c91e90cd13dab7a7, type: 3}
+  buildType: 1
+  houseProfM: []
+  houseProfF: []
+  storeProfM: []
+  storeProfF: []
+  mayorProfs: []
   spawnpoints:
   - {fileID: 5759872306001388484}
   - {fileID: 4146192323175194602}

@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class MouseLook : MonoBehaviour
 {
     public float mouseSensitivity = 100f;
-    public string[] genders;
+    public string[] genders, spouses;
 
     public Transform playerBody;
     public GameObject infobox;
     public Text villagerName;
     public Text genderText;
-    //public Text profName;
+    public Text profName;
     public Text persName;
 
     float xRotation = 0f;
@@ -44,11 +44,12 @@ public class MouseLook : MonoBehaviour
             if(hit.transform.gameObject.GetComponent<Human>() != null)
             {
                 infobox.gameObject.SetActive(true);
+                var fondVill = hit.transform.gameObject.GetComponent<Human>();
 
                 villagerName.text = hit.transform.gameObject.name;
-                genderText.text = genders[hit.transform.gameObject.GetComponent<Human>().gender];
-                //profName.text = hit.transform.gameObject.GetComponent<Human>();
-                persName.text = hit.transform.gameObject.GetComponent<Human>().personality;
+                genderText.text = string.Format("Gender: {0}", genders[fondVill.gender]);
+                profName.text = string.Format("Profession: {0}", fondVill.profession);
+                persName.text = string.Format("Personality: {0}", fondVill.personality);
 
             }
             else

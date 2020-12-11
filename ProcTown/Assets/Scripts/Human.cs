@@ -10,7 +10,9 @@ public class Human : MonoBehaviour
     public int gender;
     public GameObject[] heads, torsos;
     public string personality;
+    public string profession;
     public string[] mafp, masp, fefp, fesp, personalities;
+    public string[] houseProfM, houseProfF, storeProfM, storeProfF, mayorProfs;
 
     // Start is called before the first frame update
     void Start()
