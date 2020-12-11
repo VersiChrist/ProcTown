@@ -9,17 +9,14 @@ public class Human : MonoBehaviour
     Rigidbody rb;
     public int gender;
     public GameObject[] heads, torsos;
-    public string personality;
-    public string profession;
+    public string personality, profession;
+    public GameObject spouse, parent1, parent2;
     public string[] mafp, masp, fefp, fesp, personalities;
     public string[] houseProfM, houseProfF, storeProfM, storeProfF, mayorProfs;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (gender == 0)
-            gender = Random.Range(1, 3);
-
         var f = Random.Range(0, mafp.Length);
         var s = Random.Range(0, masp.Length);
 
@@ -51,6 +48,9 @@ public class Human : MonoBehaviour
                 head.transform.parent = gameObject.transform;
             }
         }
+
+        if (profession == "Child")
+            transform.localScale = new Vector3(.75f, .75f, .75f);
 
         HouseGeneration.population++;
         rb = GetComponent<Rigidbody>();
@@ -108,7 +108,6 @@ public class Human : MonoBehaviour
     {
         CancelInvoke("ChangeDirection");
         transform.rotation = Random.Range(0,2) == 0 ? Quaternion.Inverse(transform.rotation) : Quaternion.Euler(0, transform.rotation.y * 90, 0);
-        Debug.Log("Did Hit");
         InvokeRepeating("ChangeDirection", 5f, 5f);
     }
 }

@@ -32,5 +32,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        if (Input.GetKeyDown(KeyCode.T))
+            Time.timeScale = Mathf.Abs(Time.timeScale - 1);
     }
 }
