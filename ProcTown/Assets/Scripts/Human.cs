@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class Human : MonoBehaviour
 {
-    bool move;
+    bool move, talking;
     Rigidbody rb;
     public int gender;
     public GameObject[] heads, torsos;
-    public string personality, profession;
-    public GameObject spouse, parent1, parent2;
+    public string personality, profession, likes, dislikes;
+    public GameObject spouse, parent1, parent2, talker;
     public string[] mafp, masp, fefp, fesp, personalities;
-    public string[] houseProfM, houseProfF, storeProfM, storeProfF, mayorProfs;
+    public string[] houseProfM, houseProfF, storeProfM, storeProfF, mayorProfs, likesDislikes;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,17 @@ public class Human : MonoBehaviour
 
         gameObject.name = string.Format("{0}{1}", gender == 1 ? mafp[f] : fefp[f], gender == 1 ? masp[s] : fesp[s]);
         personality = personalities[Random.Range(0, personalities.Length)];
+        likes = likesDislikes[Random.Range(0, likesDislikes.Length)];
+
+        for (int i = 0; i < 1; i++)
+        {
+            var rand = Random.Range(0, likesDislikes.Length);
+
+            if (likesDislikes[rand] == likes)
+                i--;
+            else
+                dislikes = likesDislikes[rand]; 
+        }
 
         for (int i = 0; i < 1; i++)
         {
@@ -60,37 +71,59 @@ public class Human : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(move)
+        if(move && !talking)
             rb.MovePosition(transform.position + transform.forward * 3 * Time.deltaTime);
+
+        if (talking) 
+            talking = true;
+
 
         if (transform.position.z < 2f && transform.position.x > 2f)
         {
-            CancelInvoke("ChangeDirection");
+            Invoking();
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            InvokeRepeating("ChangeDirection", 5f, 5f);
         }   
 
         if (transform.position.z > 2f && transform.position.x < 2f)
         {
-            CancelInvoke("ChangeDirection");
+            Invoking();
             transform.rotation = Quaternion.Euler(0, 90, 0);
-            InvokeRepeating("ChangeDirection", 5f, 5f);
         }     
 
         if (transform.position.z > 2f && transform.position.x > 38f)
         {
-            CancelInvoke("ChangeDirection");
+            Invoking();
             transform.rotation = Quaternion.Euler(0, -90, 0);
-            InvokeRepeating("ChangeDirection", 5f, 5f);
         }
                
         if (transform.position.z > 38.5f && transform.position.x > 2f)
         {
-            CancelInvoke("ChangeDirection");
+            Invoking();
             transform.rotation = Quaternion.Euler(0, 180, 0);
-            InvokeRepeating("ChangeDirection", 5f, 5f);
         }
 
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 5) && !talking)
+            if (hit.transform.gameObject.GetComponent<Human>() != null && hit.transform.gameObject.GetComponent<Human>().talker == null)
+            {
+                if (Random.Range(0, 11) > 5)
+                {
+                    CancelInvoke("ChangeDirection");
+                    talking = true;
+                    talker = hit.transform.gameObject;
+                    hit.transform.gameObject.GetComponent<Human>().talker = gameObject;
+                    hit.transform.gameObject.GetComponent<Human>().talking = true;
+                    hit.transform.gameObject.GetComponent<Human>().CancelInvoke("ChangeDirection");
+                    StartCoroutine(Talking());
+                }
+            }
+    }
+
+    void Invoking()
+    {
+        CancelInvoke("ChangeDirection");
+        InvokeRepeating("ChangeDirection", 5f, 5f);
     }
 
     void Halt()
@@ -106,9 +139,25 @@ public class Human : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        CancelInvoke("ChangeDirection");
+        Invoking();
         transform.rotation = Random.Range(0,2) == 0 ? Quaternion.Inverse(transform.rotation) : Quaternion.Euler(0, transform.rotation.y * 90, 0);
-        InvokeRepeating("ChangeDirection", 5f, 5f);
     }
+
+    IEnumerator Talking()
+    {
+        yield return new WaitForSeconds(Random.Range(30 , 61));
+        StopTalking();
+    } 
+
+    void StopTalking()
+    {
+        talker.GetComponent<Human>().talking = false;
+        talker.GetComponent<Human>().talker = null;
+        talker.transform.gameObject.GetComponent<Human>().InvokeRepeating("ChangeDirection", 5f, 5f);
+
+        talking = false;
+        talker = null;
+        InvokeRepeating("ChangeDirection", 5f, 5f);
+    }    
 }
 

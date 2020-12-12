@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     CharacterController controller;
+    public GameObject pauseText;
     public float speed = 12f;
 
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        pauseText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         if (Input.GetKeyDown(KeyCode.T))
+        {
             Time.timeScale = Mathf.Abs(Time.timeScale - 1);
+            pauseText.SetActive(!pauseText.activeInHierarchy);
+        }
     }
 }

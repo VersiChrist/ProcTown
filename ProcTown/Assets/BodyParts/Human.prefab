@@ -72,7 +72,10 @@ MonoBehaviour:
   - {fileID: 5277707778043804316, guid: 788af3129e81c5644bef12d46c4ae17f, type: 3}
   - {fileID: 2571472301359088972, guid: d484abdafda154e4ea25e0239174a251, type: 3}
   personality: 
-  proffesion: 
+  profession: 
+  spouse: {fileID: 0}
+  parent1: {fileID: 0}
+  parent2: {fileID: 0}
   mafp:
   - Osl
   - And
@@ -246,3 +249,28 @@ MonoBehaviour:
   - Mayor
   - Mayor's Husband
   - Mayor's Wife
+  likesDislikes:
+  - Wine
+  - Children
+  - Themselves
+  - Strawberries
+  - Meat
+  - This town
+  - The outside
+  - The world
+  - Peace
+  - Chaos
+  - Fire
+  - Silence
+  - Books
+  - Music
+  - Poems
+  - Their neighbors
+  - Beer
+  - The mayor
+  - Explosions
+  - Alchemy
+  - Magic
+  - Holidays
+  - Festivals
+  - Fun
