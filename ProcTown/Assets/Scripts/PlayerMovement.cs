@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     CharacterController controller;
     public GameObject pauseText;
+    public GameObject credits;
     public float speed = 12f;
 
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         pauseText.SetActive(false);
+        credits.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        if (Input.GetKeyDown(KeyCode.C))
+            credits.SetActive(!credits.activeInHierarchy);
 
         if (Input.GetKeyDown(KeyCode.T))
         {
