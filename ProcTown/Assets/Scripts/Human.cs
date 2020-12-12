@@ -9,10 +9,10 @@ public class Human : MonoBehaviour
     Rigidbody rb;
     public int gender;
     public GameObject[] heads, torsos;
-    public string personality, profession, likes, dislikes;
-    public GameObject spouse, parent1, parent2, talker;
+    public string personality, profession, likes, dislikes, quote;
+    public GameObject spouse, parent1, parent2, talker, bubble;
     public string[] mafp, masp, fefp, fesp, personalities;
-    public string[] houseProfM, houseProfF, storeProfM, storeProfF, mayorProfs, likesDislikes;
+    public string[] houseProfM, houseProfF, storeProfM, storeProfF, mayorProfs, likesDislikes, quotes;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +23,7 @@ public class Human : MonoBehaviour
         gameObject.name = string.Format("{0}{1}", gender == 1 ? mafp[f] : fefp[f], gender == 1 ? masp[s] : fesp[s]);
         personality = personalities[Random.Range(0, personalities.Length)];
         likes = likesDislikes[Random.Range(0, likesDislikes.Length)];
+        quote = quotes[Random.Range(0, quotes.Length)];
 
         for (int i = 0; i < 1; i++)
         {
@@ -126,6 +127,8 @@ public class Human : MonoBehaviour
                     StartCoroutine(Talking());
                 }
             }
+
+        bubble.SetActive(talking);
     }
 
     void Invoking()

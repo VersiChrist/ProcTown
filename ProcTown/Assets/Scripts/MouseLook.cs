@@ -10,7 +10,7 @@ public class MouseLook : MonoBehaviour
 
     public Transform playerBody;
     public GameObject infobox;
-    public Text villagerName, genderText, profName, persName, family, likes, dislikes;
+    public Text villagerName, genderText, profName, persName, family, likes, dislikes, quote;
 
     float xRotation = 0f;
 
@@ -49,6 +49,7 @@ public class MouseLook : MonoBehaviour
                 persName.text = string.Format("Personality: {0}", fondVill.personality);
                 likes.text = string.Format("Likes: {0}", fondVill.likes);
                 dislikes.text = string.Format("Dislikes: {0}", fondVill.dislikes);
+                quote.text = string.Format("{0}", fondVill.quote);
                 
                 if (fondVill.profession != "Child" && fondVill.spouse != null || fondVill.profession == "Child")
                     family.text = fondVill.profession != "Child" ? string.Format("{0}: {1}", spouses[fondVill.gender], fondVill.spouse.name) : string.Format("Parents: {0}/{1}", fondVill.parent1.name, fondVill.parent2.name);
