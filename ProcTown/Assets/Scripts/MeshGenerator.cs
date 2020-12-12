@@ -66,6 +66,8 @@ public class MeshGenerator : MonoBehaviour
         mesh.Clear();
 
         mesh.vertices = vertices;
+
+
         mesh.triangles = triangles;
 
         mesh.RecalculateNormals();
@@ -75,6 +77,15 @@ public class MeshGenerator : MonoBehaviour
         meshCollider.sharedMesh = mesh;
 
         mesh.RecalculateTangents();
+
+        Vector2[] uvs = new Vector2[vertices.Length];
+
+        for (int i = 0; i < uvs.Length; i++)
+        {
+            uvs[i] = new Vector2(vertices[i].x, vertices[i].z);
+        }
+
+        mesh.uv = uvs;
         Material mat = Instantiate(material);
         GetComponent<MeshRenderer>().material = mat;
     }
