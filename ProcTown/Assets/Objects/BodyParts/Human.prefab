@@ -305,6 +305,17 @@ MonoBehaviour:
   - '"..."'
   - '"I want to go home already..."'
   - '"Wait, what was I supposed to do again?"'
+  - '"Have you heard of the high elves?"'
+  - '"Dragons? Pfft, that''s just fairy tales!"'
+  - '"Oh boy, I sure do hope nothing happens to our idyllic village!"'
+  - '"Who needs weapons when you have a pitchfork?"'
+  - '"We found a witch! May we burn her?"'
+  - '"Time to practice some magic!"'
+  - '"The only good non-human, is a dead non-human!"'
+  - '"Double rations?!"'
+  - '"This entire town must be purged!"'
+  - '"Them city folk don''t know what true life is!"'
+  - '"Tchh! I''m sneaking around!"'
 --- !u!1 &5709996531040953538
 GameObject:
   m_ObjectHideFlags: 0
