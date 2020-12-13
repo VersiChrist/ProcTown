@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         pauseText.SetActive(false);
         credits.SetActive(false);
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -45,5 +46,8 @@ public class PlayerMovement : MonoBehaviour
             Time.timeScale = Mathf.Abs(Time.timeScale - 1);
             pauseText.SetActive(!pauseText.activeInHierarchy);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
     }
 }

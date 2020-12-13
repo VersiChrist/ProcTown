@@ -17,6 +17,6 @@ public class Music : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M))
             muted = !muted;
 
-        Camera.main.gameObject.GetComponent<AudioListener>().enabled = !muted;
+        AudioListener.volume = muted == false ? 1 : 0;
     }
 }

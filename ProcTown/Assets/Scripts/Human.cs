@@ -149,7 +149,7 @@ public class Human : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!talking)
+        if (!talking && other.GetComponent<Human>() == null)
         {
             Invoking();
             transform.rotation = Random.Range(0, 2) == 0 ? Quaternion.Inverse(transform.rotation) : Quaternion.Euler(0, transform.rotation.y * 90, 0);

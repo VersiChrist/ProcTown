@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 672378049169278562}
   - component: {fileID: 675025592273164009}
   - component: {fileID: 1887124801}
+  - component: {fileID: 8039982889872411519}
   m_Layer: 0
   m_Name: Human
   m_TagString: Untagged
@@ -67,11 +68,15 @@ MonoBehaviour:
   - {fileID: 1764041244637804169, guid: 96314a0ffd87e8442aae309aa1d0e1a4, type: 3}
   - {fileID: 3665635892661292559, guid: 3cf8f4680194aad4e96e70272a3b94d0, type: 3}
   - {fileID: 805129406079907966, guid: e33240d3d4092064d990aab6d602b6f8, type: 3}
+  - {fileID: 805129406079907966, guid: 6b1531c33a449ee42b0cc9d7c1c4654b, type: 3}
+  - {fileID: 805129406079907966, guid: 36f23e950707c7f40b36bb3d6eea2b7c, type: 3}
   torsos:
   - {fileID: 678235635725253101, guid: 2c2575c534e30d64a9171d2d54763082, type: 3}
   - {fileID: 573650690836562502, guid: ffe7bc852bb481b439da4d0a9c007d8f, type: 3}
   - {fileID: 5277707778043804316, guid: 788af3129e81c5644bef12d46c4ae17f, type: 3}
   - {fileID: 2571472301359088972, guid: d484abdafda154e4ea25e0239174a251, type: 3}
+  - {fileID: 2571472301359088972, guid: 0018334e745d1d7449efdb8ba881697e, type: 3}
+  - {fileID: 2571472301359088972, guid: 0519efe02dca45143a3b2ba6864ef234, type: 3}
   personality: 
   profession: 
   likes: 
@@ -387,6 +392,19 @@ MonoBehaviour:
   - '"Did you hear what X and  Y did yesterday? How scandalous!"'
   - '"That last book made me feel things I probably shouldn''t...."'
   - '"Elves, dwarves, dragons, there''s no one I wouldn''t *censored*!"'
+--- !u!65 &8039982889872411519
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675025592273164008}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &5709996531040953538
 GameObject:
   m_ObjectHideFlags: 0
