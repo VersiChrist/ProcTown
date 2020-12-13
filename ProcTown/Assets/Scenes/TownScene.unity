@@ -3966,7 +3966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5791d0949ddcd1c4d8b4e205d4312169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 500
+  mouseSensitivity: 350
   genders:
   - shit's broke
   - Male

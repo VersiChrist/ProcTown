@@ -207,28 +207,58 @@ MonoBehaviour:
   - Hard-Working
   - Rational
   - Witty
+  - Lazy
+  - Unyielding
+  - Half-awake
+  - Rude
+  - Complicated
+  - Hard on themselves
+  - Bleeding heart
+  - Of an open book
+  - Pious
+  - Committed
+  - Loyal
+  - Unloyal
+  - Rumor loving
+  - Rumor spreading
+  - Confused
+  - Pure
+  - Curious
+  - Perverted
+  - Scaredy
+  - Full of hubris
+  - Cleptomaniac
+  - Gluttonous
+  - Greedy
+  - What personality?
+  - Two-dimensional
+  - Three-dimensional
   houseProfM:
   - None
   - Bard
   - Guard
   - Alchemist
   - Medic
+  - Farmer
   - Blacksmith
   - Winemaker
   - Jailer
   - Hunter
   - Professor
+  - Farmhand
   houseProfF:
   - None
   - Bard
   - Guard
   - Alchemist
   - Medic
+  - Farmer
   - Seamstress
   - Grape-stomper
   - Accountant
   - Herb-collector
   - Doctor
+  - Milkmaid
   storeProfM:
   - Merchant
   - Alchemist
@@ -279,7 +309,33 @@ MonoBehaviour:
   - Magic
   - Holidays
   - Festivals
-  - Fun
+  - Cold
+  - Hot
+  - Humidity
+  - Dryness
+  - Death
+  - Plagues
+  - Nudity
+  - Erotic books
+  - Their house
+  - Pretty views
+  - Elves
+  - Dwarves
+  - Non-humans
+  - Dragons
+  - Spiders
+  - Rats
+  - Snakes
+  - Their job
+  - Their family
+  - City folk
+  - Other towns
+  - Neighboring city
+  - Neighboring country
+  - The ocean
+  - Grim stories
+  - Fairytales
+  - Sleep
   quotes:
   - '"You may have crushed my soul, but you''ll never have my boots!"'
   - '"I.. Don''t like the look of those torture engines.. Heh heh..."'
@@ -316,6 +372,21 @@ MonoBehaviour:
   - '"This entire town must be purged!"'
   - '"Them city folk don''t know what true life is!"'
   - '"Tchh! I''m sneaking around!"'
+  - '"Lambert, Lambert you prick."'
+  - '"I can''t let anyone see this book!"'
+  - '"A horse, a horse! A kingdom for a horse!"'
+  - '"One simple mistake and no one wants to drink with you anymore!"'
+  - '"Maybe I should become a poet..."'
+  - '"I need to buy more torches, I''v heard stories about Grue."'
+  - '"I should''ve gone to bed earlier..."'
+  - '"Another day, spent in shackles of this town."'
+  - '"Ah damn it all, I''m going to become an adventurer next week!"'
+  - '"I miss the rain..."'
+  - '"I spilled my drink!"'
+  - '"I feel like someone''s watching me from above..."'
+  - '"Did you hear what X and  Y did yesterday? How scandalous!"'
+  - '"That last book made me feel things I probably shouldn''t...."'
+  - '"Elves, dwarves, dragons, there''s no one I wouldn''t *censored*!"'
 --- !u!1 &5709996531040953538
 GameObject:
   m_ObjectHideFlags: 0
